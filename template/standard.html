@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+
+{% block title %} standard {% endblock title %}
+
+{% block body %} 
+
+{% load static %}  
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+   <body style="background: #000;" class="background-black">
+  <div class="container">    
+      <hr>
+    <div class="container">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<div class="container">
+  <div id="Checkout" class="inline">
+      <h1>Pay Invoice</h1>
+      <div class="card-row">
+          <span class="visa"></span>
+          <span class="mastercard"></span>
+          <span class="amex"></span>
+          <span class="discover"></span>
+      </div>
+        <div class="form-group">
+        <form method="POST" action="/standard">
+          {% csrf_token %}
+              <label for="PaymentAmount"><strong>29,999</strong></label>
+              </div>
+          <div class="form-group">
+              <label or="Name">Name</label>
+              <input id="Name" name="Name"  class="form-control" type="Name"  placeholder="Name" maxlength="255"></input>
+          </div>
+            <div class="form-group">
+              <label for="PhoneNumber">Phone Number</label>
+              <input id="PhoneNumber" name="PhoneNumber" class="null card-image form-control" type="PhoneNumber" placeholder="PhoneNumber"></input>
+          </div>
+          <div class="form-group">
+              <label for="Email">Email</label>
+              <input id="Email"  name="Email" class="form-control" type="" placeholder="Email" maxlength=""></input>
+          </div>
+          <div class="form-group">
+              <label for="Address">Address.</label>
+              <div class="input-container" >
+                  <input id="Address" name="Address" class="form-control" type="Address" placeholder="Address" ></input>
+                  <i id="cvc" class="fa fa-question-circle"></i>
+              </div>              
+          </div>
+          <!--PAYMENT INTIGRATIONS-->
+          <button type="submit" id="rzp-button1" class="btn btn-block btn-success submit-button">pay</button>
+          <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+          <script>
+          var options = {
+              "key": "{{api_key}}", // Enter the Key ID generated from the Dashboard
+              "name": "Standard-Payment",
+              "description": "Test Transaction",
+              "image": "https://example.com/your_logo",
+              "order_id": "{{order_id}}", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+              "handler": function (response){
+                  alert(response.razorpay_payment_id);
+                  alert(response.razorpay_order_id);
+                  alert(response.razorpay_signature)
+                  },
+                   "theme": {
+                              "color": "#3399cc"
+                            }
+                            };
+                              var rzp1 = new Razorpay(options);
+                              rzp1.on('payment.failed', function (response){
+                                  alert(response.error.code);
+                                  alert(response.error.description);
+                                  alert(response.error.source);
+                                  alert(response.error.step);
+                                  alert(response.error.reason);
+                                  alert(response.error.metadata.order_id);
+                                  alert(response.error.metadata.payment_id);
+                                  });
+                                  document.getElementById('rzp-button1').onclick = function(e){
+                                      rzp1.open();
+                                      e.preventDefault();
+                                      }
+                                      </script>
+                                      </form>
+                                      </div>
+                                      </div>
+                                      <div>&nbsp;</div>
+                                      <div>&nbsp;</div>
+                                      <div class="container" style="border-top: 2px solid #fff;">
+                                       <div>&nbsp;</div>
+                                        <div>&nbsp;</div>
+                                       <footer>
+                    <div class="footer-dark">
+                    <div class="container">
+                    <div class="row">
+                    <div class="col-md-3 item">
+                    <h3 class="text-left white-text" style="display:flex; justify-content: left";><b>our production.</b></h3>
+                    <div>&nbsp;</div>
+                    <div>&nbsp;</div>
+                    <ul>
+                        <li style="list-style-type: none;" class="text-left white-text">About Edge</li>
+                        <li style="list-style-type: none;" class="text-left white-text">Latest Videos</li>
+                        <li style="list-style-type: none;" class="text-left white-text">Studio Tour</li>
+                         <li style="list-style-type: none;" class="text-left white-text">Press & News</li>
+                          <li style="list-style-type: none;" class="text-left white-text">Help (FAQ)</li>
+                    </ul>
+                </div>
+                <div class="col-md-3 item">
+                    <h3 class="text-left white-text" style="display:flex; justify-content: center";><b>film news.</b></h3>
+                    <div>&nbsp;</div>
+                    <div>&nbsp;</div>
+                    <p class="text-left white-text">Subscribe to Leitmotif newsletter this very day.</p>
+                    <div class="form-group "><label for="email" class="mb-3"></b></label><input type="email" class="form-control form-control-lg" placeholder="Enter email" id="email " style="background: black";></div>
+
+                </div>
+                <div class="col-md-3 item">
+                    <h3 class="text-left white-text" style="display:flex; justify-content: center";><b>about.</b></h3>
+                    <div>&nbsp;</div>
+                    <div>&nbsp;</div>
+                     <p class="text-left white-text">Create your feature presentation the modern way & without effort.</p>
+                </div>
+                
+                <div class="col-md-3 item text">
+                    <h3 class="text-left white-text" style="display:flex; justify-content: center";><b>instagram posts.</b></h3>
+                    <div>&nbsp;</div>
+                    <div>&nbsp;</div>
+                    <p class="text-left white-text">Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus.</p>
+                </div>
+                <div class="col item social"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-youtube"></i></a><a href="#"><i class="fa fa-instagram"></i></a><a href="#"><i class="fa fa-google"></i></a></div>
+            </div>
+            <div>&nbsp;</div>
+             <div class="col-12 text-left white-text" style="display:flex; justify-content: center">contact@barry.com © 2020</p>
+        </div>
+    </footer>
+    </div>
+
+ <script src= "{% static 'JavaScript/all.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+$(function () {
+  $('[data-toggle="popover"]').popover();
+  
+  $('#cvc').on('click', function(){
+    if ( $('.cvc-preview-container').hasClass('hide') ) {
+      $('.cvc-preview-container').removeClass('hide');
+    } else {
+      $('.cvc-preview-container').addClass('hide');
+    }    
+  });
+  
+});
+</script>
+
+{% endblock body %}

@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+
+{% block title %} booknow {% endblock title %}
+
+{% block body %} 
+
+{% load static %}  
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+<body style="background: #000;" class="background-black">
+<div class="container-fluid">  
+<div class="pricing-wrapper clearfix">
+		<!-- Titulo -->
+    {% for i in textbooknow %}
+		<h1 class="pricing-table-title">{{i.title}} <a href="http://contact@barry.com">{{i.email}} </a></h1>
+    {% endfor %}
+ <div>&nbsp;</div>
+  <div>&nbsp;</div>
+		<div class="pricing-table">
+    {% for i in beginner %}
+			<h3 class="pricing-title">{{i.name}}</h3>
+   
+			<div class="price">₹{{i.price}}<sup></sup></div>
+			<!-- Lista de Caracteristicas / Propiedades -->
+			<ul class="table-list">
+				<li> <span>{{i.title}}</span></li>
+			<li><span>{{i.tag}}</span></li>
+				<li> <span>{{i.desc}}</span></li>
+				<li><span>{{i.text}}</span></li>
+			</ul>
+			<!-- Contratar / Comprar -->
+			<div class="table-buy">
+      <p>₹{{i.price}}</p>
+			<a href="/payment" class="pricing-action">Send Enquiry</a>
+         {% endfor %}
+			</div>
+		</div>
+		
+		<div class="pricing-table recommended">
+    {% for i in standard%}
+			<h3 class="pricing-title">{{i.name}}</h3>
+			<div class="price">₹{{i.price}}<sup></sup></div>
+			<!-- Lista de Caracteristicas / Propiedades -->
+			<ul class="table-list">
+				<li><span>{{i.title}}</span></li>
+				<li> <span>{{i.tag}}</span></li>
+				<li><span>{{i.desc}}</span></li>
+				<li><span>{{i.text}}</span></li>			
+			</ul>
+			<!-- Contratar / Comprar -->
+			<div class="table-buy">
+      <p>₹{{i.price}}</p>
+       {% endfor %}			
+				<a href="/standard" class="pricing-action">Send Enquiry</a>
+			</div>
+		</div>
+
+		<div class="pricing-table">
+    {% for i in professional%}
+			<h3 class="pricing-title">{{i.name}}</h3>
+			<div class="price">₹{{i.price}}<sup></sup></div>
+			<!-- Lista de Caracteristicas / Propiedades -->
+			<ul class="table-list">
+				<li><span>{{i.title}}</span></li>
+				<li><span>{{i.tag}}</span></li>
+				<li><span>{{i.desc}}</span></li>
+				<li><span>{{i.text}}</span></li>
+			</ul>
+			<!-- Contratar / Comprar -->
+			<div class="table-buy">
+			<p>₹{{i.price}}</p>
+     {% endfor %}
+				<a href="/professional" class="pricing-action">Send Enquiry</a>
+			</div>
+		</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div class="pricing-table recommended">     
+        <h3 class="pricing-title">Advance</h3>
+        <div class="price">₹14 999<sup></sup></div>
+        <!-- Lista de Caracteristicas / Propiedades -->
+        <ul class="table-list">
+          <li><span>1 Day Shoot</span></li>
+          <li> <span>6 Changes</span></li>
+          <li><span>20 Images</span></li>
+          <li><span>Advance Makeup Styling</span></li>			
+        </ul>
+        <!-- Contratar / Comprar -->
+        <div class="table-buy">
+        <p>₹14 999</p>        		
+         <a href="/advance" class="pricing-action">Send Enquiry</a>
+        </div>
+      </div>
+	</div>
+  </div>
+   <div>&nbsp;</div>
+  <div>&nbsp;</div>
+  <div>&nbsp;</div>
+  <div class="container">
+ <ul class="table-list-2 text-center">
+<li><strong>Note:- 1: </strong>Shoot will take place at the studio in (Delhi NCR) only.</li>
+<li><strong>2: </strong>Ad advance of (50%) to be made before commencement of the shoot.</li> 
+<li><strong>3: </strong> We confirm add commerce a shoot after receving  (50%) of the fees in advance.</li> 
+<li><strong>4: </strong> A charges of  (Rs 750/-) per hour will be applicable if the shoot extend beyond the stiputed time , due to delays be the client.</li> 
+</ul>
+ </div>
+
+
+
+ 
+ 
+ 
+  <div>&nbsp;</div>
+   <div>&nbsp;</div>
+   <div>&nbsp;</div>
+  <div>&nbsp;</div>
+   <div>&nbsp;</div>
+                    <div class="container" style="border-top: 2px solid #fff;">
+                    <div>&nbsp;</div>
+                    <div>&nbsp;</div>
+                    <footer>
+                    <div class="footer-dark">
+                    <div class="container-fluid">
+                    <div class="row">
+                    <div class="col-md-3 item">
+                    <h3 class="text-left white-text" style="display:flex; justify-content: left";><b>our production.</b></h3>
+                    <div>&nbsp;</div>
+                    <div>&nbsp;</div>
+                    <ul class="table-list-2">
+                        <li style="list-style-type: none;" class="text-left white-text">About Edge</li>
+                        <li style="list-style-type: none;" class="text-left white-text">Latest Videos</li>
+                        <li style="list-style-type: none;" class="text-left white-text">Studio Tour</li>
+                         <li style="list-style-type: none;" class="text-left white-text">Press & News</li>
+                          <li style="list-style-type: none;" class="text-left white-text">Help (FAQ)</li>
+                    </ul>
+                </div>
+                <div class="col-md-3 item">
+                    <h3 class="text-left white-text" style="display:flex; justify-content: center";><b>film news.</b></h3>
+                    <div>&nbsp;</div>
+                    <div>&nbsp;</div>
+                    <h6 class="text-left white-text">Subscribe to Leitmotif newsletter this very day.</h6>
+                    <div class="form-group "><label for="email" class="mb-3"></b></label><input type="email" class="form-control form-control-lg" placeholder="Enter email" id="email " style="background: black";></div>
+
+                </div>
+                <div class="col-md-3 item">
+                    <h3 class="text-left white-text" style="display:flex; justify-content: center";><b>about.</b></h3>
+                    <div>&nbsp;</div>
+                    <div>&nbsp;</div>
+                     <h6 class="text-left white-text">Create your feature presentation the modern way & without effort.</h6>
+                </div>
+                
+                <div class="col-md-3 item text">
+                    <h3 class="text-left white-text" style="display:flex; justify-content: center";><b>instagram posts.</b></h3>
+                    <div>&nbsp;</div>
+                    <div>&nbsp;</div>
+                    <h6 class="text-left white-text">Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus.</h6>
+                </div>
+                <div class="col item social text-center"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-youtube"></i></a><a href="#"><i class="fa fa-instagram"></i></a><a href="#"><i class="fa fa-google"></i></a></div>
+            </div>
+            <div class="col-12 text-left white-text" style="display:flex; justify-content: center"><h6>contact@barry.com © 2020</h6>
+        </div>
+    </footer>
+</div>
+ 
+
+
+<!--footer start-->                  
+ </div>
+<!--footer end--> 
+</body> 
+
+
+
+
+ {% endblock body %}

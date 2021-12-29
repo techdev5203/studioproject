@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}success{% endblock title %}
+
+{% block body %} 
+
+{% load static %}  
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+<body style="background: #000;" class="background-black">
+<div class="container">
+<div class="text-center mt-5 pt-5">
+<img src=="static/images/download.png" class="img-fluid" style="height:200px">
+<h3 class="mt-4"> Thanks your payment has been received</h3>
+</div>
+   
+{% endblock %}
+{% block js %}
+<script>
+</script>
+{% endblock %}

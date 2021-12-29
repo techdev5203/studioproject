@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% block title %} applynow {% endblock title %}
+{% block body %}
+
+{% load static %}  
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+  <body style="background: #000;" class="background-black">
+  <div class="container">
+<h3 class="text-center  white-text">Apply now Form</h3>
+<p >Resize the browser window to see the effect. When the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other.</p>
+
+3
+<div class="container">
+  <form method="POST" action="/applynow">
+    {% csrf_token %}
+    <label for="name"><b></b></label>
+    <input class="contact-text" type="name" id="name" name="name" placeholder=" Enter Your Name.." required>
+    <label for="phone"><b></b></label>
+    <input  class="contact-text" type="phone" id="phone" name="phone" placeholder="Enter Your Phone number" required>
+    <label for="email"><b></b></label>
+    <input  class="contact-text" type="email"  name="email" id="email" placeholder="Enter Your Email" required>
+    <label for="age"><b></b></label>
+    <input class="contact-text" type="age" id="age" name="age" placeholder=" Your Age.." required>
+    <label for="portfoliolink"><b></b></label>
+    <input class="contact-text" type="portfoliolink" id="portfoliolink" name="portfoliolink" placeholder=" Enter Your Portfoliolink.." required>
+    <div>&nbsp;</div>
+    <select class="contact-text" type="experience" id="experience" name="experience">
+      <option ><b>Fresher</b></option>
+        <option><b>0-6</b></option>
+        <option><b>1-3</b></option>
+        <option><b>3-5</b></option>
+      </select>
+      <p>Fresher can apply </p> 
+    <p>Click on the "Choose File" button to upload a file:</p>
+  <input type="file" id="myFile" name="images">
+  <div>&nbsp;</div>
+  <input type="submit">
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+  
+  <!--footer start-->
+                  <div>&nbsp;</div>
+                    <div class="container" style="border-top: 2px solid #fff;">
+                    <div>&nbsp;</div>
+                    <div>&nbsp;</div>
+                    <footer>
+                    <div class="footer-dark">
+                    <div class="container">
+                    <div class="row">
+                    <div class="col-md-3 item">
+                    <h3 class="text-left white-text" style="display:flex; justify-content: left";><b>our production.</b></h3>
+                    <div>&nbsp;</div>
+                    <div>&nbsp;</div>
+                    <ul>
+                        <li style="list-style-type: none;" class="text-left white-text">About Edge</li>
+                        <li style="list-style-type: none;" class="text-left white-text">Latest Videos</li>
+                        <li style="list-style-type: none;" class="text-left white-text">Studio Tour</li>
+                         <li style="list-style-type: none;" class="text-left white-text">Press & News</li>
+                          <li style="list-style-type: none;" class="text-left white-text">Help (FAQ)</li>
+                    </ul>
+                </div>
+                <div class="col-md-3 item">
+                    <h3 class="text-left white-text" style="display:flex; justify-content: center";><b>film news.</b></h3>
+                    <div>&nbsp;</div>
+                    <div>&nbsp;</div>
+                    <p class="text-left white-text">Subscribe to Leitmotif newsletter this very day.</p>
+                    <div class="form-group "><label for="email" class="mb-3"></b></label><input type="email" class="form-control form-control-lg" placeholder="Enter email" id="email " style="background: black";></div>
+
+                </div>
+                <div class="col-md-3 item">
+                    <h3 class="text-left white-text" style="display:flex; justify-content: center";><b>about.</b></h3>
+                    <div>&nbsp;</div>
+                    <div>&nbsp;</div>
+                     <p class="text-left white-text">Create your feature presentation the modern way & without effort.</p>
+                </div>
+                
+                <div class="col-md-3 item text">
+                    <h3 class="text-left white-text" style="display:flex; justify-content: center";><b>instagram posts.</b></h3>
+                    <div>&nbsp;</div>
+                    <div>&nbsp;</div>
+                    <p class="text-left white-text">Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus.</p>
+                </div>
+                <div class="col item social"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-youtube"></i></a><a href="#"><i class="fa fa-instagram"></i></a><a href="#"><i class="fa fa-google"></i></a></div>
+            </div>
+            <div>&nbsp;</div>
+             <div class="col-12 text-left white-text" style="display:flex; justify-content: center">contact@barry.com © 2020</p>
+        </div>
+    </footer>
+</div>
+<!--footer end-->  
+</body>
+{% endblock body %}
+
+
+
+
